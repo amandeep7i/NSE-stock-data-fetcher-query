@@ -3,9 +3,11 @@ import sqlite3
 import time
 # from datetime import timedeltas_date2
 
-# First Query
+# First Queryb
 df = pandas.read_csv("New_File.csv")
 table_name = "MY_table"
+column = df["TIMESTAMP"]
+print(column[0])
 f = open("real.db", "w")
 conn = sqlite3.connect('real.db')
 df.to_sql(table_name, conn, if_exists='append', index=False)
@@ -58,6 +60,8 @@ table_name2 = "MY_table2"
 
 df1 = pandas.read_csv('bhavcopies1.csv')
 df2 = pandas.read_csv('bhavcopies1.csv')
+column = df1["TIMESTAMP"]
+print(column[0])
 f = open("real_new.db", "w")
 conn = sqlite3.connect("real_new.db")
 df1.to_sql(table_name1, conn, if_exists='append', index=False)
